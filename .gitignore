@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual env
+venv/
+
+# Env e segredos
+.env
+
+# DBs
+.sqlite*
+*.sqlite3
+
+# JSONs sensíveis (aqui é exigido manter o users.json, mas ignore quaisquer outros)
+*.json
+!src/users.json

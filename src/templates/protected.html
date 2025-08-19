@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Protegida</title>
+</head>
+<body>
+    <h1>Área Protegida</h1>
+
+    {% if user %}
+        <p><strong>Usuário:</strong> {{ user.username if user.username else user["username"] }}</p>
+        <p><strong>Role:</strong> {{ user.role if user.role else user["role"] }}</p>
+    {% else %}
+        <p>Nenhum usuário logado.</p>
+    {% endif %}
+
+    {% if token %}
+        <p><strong>Token JWT:</strong></p>
+        <textarea rows="5" cols="80" readonly>{{ token }}</textarea>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('logout') }}">Sair</a>
+
+    {% if user and (user.role if user.role else user["role"]) == "admin" %}
+        <br><br>
+        <a href="{{ url_for('admin_users') }}">🔧 Gerenciar Usuários (Admin)</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+        <label>Usuário:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label>Senha:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label>Método de autenticação:</label>
+        <select name="method">
+            <option value="session">Sessão</option>
+            <option value="jwt">JWT</option>
+            <option value="basic">Basic Auth</option>
+        </select><br><br>
+
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
